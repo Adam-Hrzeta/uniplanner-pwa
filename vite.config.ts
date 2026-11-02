@@ -7,13 +7,19 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
+      strategies: 'injectManifest',
+      srcDir: 'src',
+      filename: 'sw.js',
+      injectManifest: {
+        globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}']
+      },
       includeAssets: ['favicon.svg', 'icon-192.png', 'icon-512.png', 'icon-maskable-512.png'],
       manifest: {
         name: 'UniPlanner PWA',
         short_name: 'UniPlanner',
         description: 'Gestión académica personal para estudiantes universitarios',
-        theme_color: '#f6f5fb',
-        background_color: '#f6f5fb',
+        theme_color: '#1b1239',
+        background_color: '#1b1239',
         display: 'standalone',
         start_url: '/',
         scope: '/',
